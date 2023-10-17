@@ -13,15 +13,20 @@ int string_printing(va_list schara)
 	a = va_arg(schara, char*);
 	if (a == NULL)
 	{
+
 		a = "(null)";
+		lnth = _slength(a);
+		for (x = 0; x < lnth; x++)
+			_putchar(a[x]);
+		return (lnth);
 	}
 	else
 	{
 		lnth = _slength(a);
 		for (x = 0; x < lnth; x++)
 		{
-			_putchar(a[x];
-			return (lnth);
+			_putchar(a[x]);
 		}
 	}
+	return (lnth);
 }

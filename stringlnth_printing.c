@@ -22,7 +22,7 @@ int _slength(char *s)
  *
  * Return: string lenght.
  */
-int _slength(const char *s)
+int _cslength(const char *s)
 {
 	int lnth = 0;
 
