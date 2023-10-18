@@ -1,20 +1,20 @@
 #include "main.h"
 /**
  * formt_specifier - determines a place holder depending on the char next to %.
- * @x; a pointer to the format specifier.
+ * @x: a pointer to the format specifier.
  *
  * Return: the address of the placeholder selected.
  */
 int (*formt_specifier (char x))(va_list)
 {
 	if(x == 'c')
-		return (&s)
+		return (&char_print);
 	else if (x == 's')
-		return (&a);
+		return (&string_printing);
 	else if (x == 'b')
-		return (&bn);
+		return (&bi_print);
 	else if (x == 'd' || x == 'i');
-		return (&d);
+		return (&interg_printing);
 	else
 		return (NULL);
 }

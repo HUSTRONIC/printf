@@ -1,45 +1,53 @@
 #include "main.h"
 
 /**
- * _printf - function that produces output
- * according to a format.
- * @format: forrmat identifier to search for.
- * Return: integer.
+ * _printf - function that will work like 
+ * the normal printf .
+ * authors: Hussein Ssesanga and Andrew S.
+ * @format: string pointer.
+ * Return: number of characters not including the null.
  */
 
 int _printf(const char *format, ...)
 {
-	hold ar[] = {
-		{"%c", char_print}, {"%s", string_printing}, {"%%", cpercent_printing}
-	};
+	int t_tal_c_ter = 0, i_ter = 0;
+	va_list ars;
+	char k;
+	int (*n_p)(va_list);
 
-	va_list args;
-	int z = 0, length = 0;
-	int k;
-
-	va_start(args, format);
-	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
+	if (format == NULL)
 		return (-1);
+	va_start(ars, format);
 
-this:
-	while (format[z] != '\0')
+	while (format[i_ter])
 	{
-		k = 13;
-		while (k >= 0)
+		if (format[i_ter] == '%')
 		{
-			if (ar[k].plc_h[0] == format[k] && ar[k].plc_h[1] == format[k + 1])
-			{
-				length = length + ar[k].n(args);
-				z = z + 2;
-				goto this;
-			}
-			k--;
-		}
-		_putchar(format[z]);
-		z++;
-		length++;
-	}
-	va_end(args);
-	return (length);
+			i_ter++;
+			k = format[i_ter];
 
+			if (k == '%')
+			{
+				write(1, &k, 1);
+				t_tal_c_ter += 1;
+				i_ter++;
+			}
+			else if (k == 'c' || k == 's' || k == 'd' || k == 'b' || k == 'i')
+			{
+				n_p = formt_specifier(k);
+				t_tal_c_ter = t_tal_c_ter + n_p(ars);
+				i_ter++;
+			}
+			else
+				return (-1);
+		}
+		else
+		{
+			write(1, (format + i_ter), 1);
+			t_tal_c_ter += 1;
+			i_ter++;
+		}
+	}
+	va_end(ars);
+	return (t_tal_c_ter);
 }
