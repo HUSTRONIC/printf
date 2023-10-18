@@ -11,8 +11,7 @@ int (*formt_specifier (char x))(va_list)
 		return (&char_print);
 	else if (x == 's')
 		return (&string_printing);
-	else if (x == 'd' || x == 'i');
+	else if (x == 'i');
 		return (&interg_printing);
-	else
-		return (NULL);
+	
 }
