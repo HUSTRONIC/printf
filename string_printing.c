@@ -1,32 +1,25 @@
 #include "main.h"
 /**
- * string_printing - prints string.
+ * string_printing - prints string in place of s.
  * @schara: argument
  *
  * Return: string length.
  */
 int string_printing(va_list schara)
 {
-	int x, lnth;
+	int lnth;
 	char *a;
 
-	a = va_arg(schara, char*);
+	a = va_arg(schara, char *);
 	if (a == NULL)
 	{
 
 		a = "(null)";
-		lnth = _slength(a);
-		for (x = 0; x < lnth; x++)
-			_putchar(a[x]);
-		return (lnth);
+		write(1, a, 1);
+		return (1);
 	}
-	else
-	{
-		lnth = _slength(a);
-		for (x = 0; x < lnth; x++)
-		{
-			_putchar(a[x]);
-		}
-	}
+	lnth = _slength(a);
+	write(1, a, lnth);
+
 	return (lnth);
 }
