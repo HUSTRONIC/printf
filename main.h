@@ -1,34 +1,29 @@
-#ifndef _PRINT_MAIN_H
-#define _PRINT_MAIN_H
-#include <stdio.h>
+#ifndef _MAIN_H
+#define _MAIN_H
+
 #include <stdlib.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <limits.h>
 
 /**
- * format - place holder for struct
- * @plc_h: place holder
- * @n_p: pointer for function
+ * format - for symbols nd their functions
+ * @symbol: is the symbol for the function
+ * @func: is the function in the list given
  */
 
 typedef struct format
 {
-	char *plc_h;
-	int (*n_p)(va_list arrg);
-} hold;
-
-
+	char *sym;
+	int (*func)(va_list);
+} forma_t;
 int _putchar(char c);
-int cpercent_printing(void);
+int cpercent_printing(__attribute__((unused))va_list list);
 int char_print(va_list schar);
-int _slength(char *s);
+int print_number(va_list args);
 int string_printing(va_list schara);
 int _printf(const char *format, ...);
-int _cslength(const char *s);
-int (*formt_specifier (char x))(va_list);
-int cov_to_bi(int y, int *count);
 int interg_printing(long int i, int *count);
-
-
+int _slength(char *s);
+int wrapper_interg_printing(va_list arg_list);
+int format_specifier(const char *format, forma_t func_list[], va_list arg_list);
 #endif
