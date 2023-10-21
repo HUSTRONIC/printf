@@ -15,8 +15,8 @@ int _printf(const char *format, ...)
 	forma_t func_list[] = {
 		{"c", char_print},
 		{"s", string_printing},
-		{"d", wrapper_interg_printing},
-		{"i", wrapper_interg_printing},
+		{"d", print_integer},
+		{"i", print_integer},
 		{"%", cpercent_printing},
 		{NULL, NULL}
 	};

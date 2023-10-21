@@ -19,7 +19,8 @@ typedef struct format
 int _putchar(char c);
 int cpercent_printing(__attribute__((unused))va_list list);
 int char_print(va_list schar);
-int print_number(va_list args);
+int print_number(int num);
+int print_integer(va_list list);
 int string_printing(va_list schara);
 int _printf(const char *format, ...);
 int interg_printing(long int i, int *count);
