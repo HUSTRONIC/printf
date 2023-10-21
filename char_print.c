@@ -7,9 +7,7 @@
  */
 int char_print(va_list schar)
 {
-	char s;
 
-	s = va_arg(schar, int);
-	write(1, &s, 1);
+	_putchar(va_arg(schar, int));
 	return (1);
 }

@@ -11,6 +11,7 @@
 
 int format_specifier(const char *format, forma_t func_list[], va_list arg_list)
 {
+<<<<<<< Updated upstream
 	int i, j, r_val, chars;
 
 	chars = 0;
@@ -51,4 +52,11 @@ int format_specifier(const char *format, forma_t func_list[], va_list arg_list)
 		}
 	}
 	return (chars);
+=======
+	if(x == 'c')
+		return (&char_print);
+	else if (x == 's')
+		return (&string_printing);
+	return(NULL);
+>>>>>>> Stashed changes
 }

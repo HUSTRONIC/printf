@@ -8,10 +8,17 @@
  */
 int dec_printing(long int i, int *count)
 {
+<<<<<<< Updated upstream:dec_printing.c
 	if (i < 0)
 	{
 		i = i * (-1);
 
+=======
+        if (i < 0)
+
+                i = i * (-1);
+        
+>>>>>>> Stashed changes:dec_printing
 		_putchar('-');
 		(*count) +=  1;
 	}

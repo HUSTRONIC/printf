@@ -15,11 +15,8 @@ int string_printing(va_list schara)
 	{
 
 		a = "(null)";
-		write(1, a, 1);
-		return (1);
 	}
-	lnth = _slength(a);
-	write(1, a, lnth);
-
+	for (lnth = 0; a[lnth] != '\0'; lnth++)
+		_putchar(a[lnth]);
 	return (lnth);
 }
