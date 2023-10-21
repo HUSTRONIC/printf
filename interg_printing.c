@@ -8,17 +8,17 @@
  */
 int print_integer(va_list list)
 {
-    int num = va_arg(list, int);
-    int length = 0;
+	int num = va_arg(list, int);
+	int length = 0;
 
-    if (num < 0)
-    {
-        length += _putchar('-');
-        num = -num;
-    }
+	if (num < 0)
+	{
+		length += _putchar('-');
+		num = -num;
+	}
 
-    length += print_number(num);
-    return (length);
+	length += print_number(num);
+	return (length);
 }
 
 /**
@@ -29,19 +29,19 @@ int print_integer(va_list list)
  */
 int print_number(int num)
 {
-    int div = 1;
-    int length = 0;
+	int div = 1;
+	int length = 0;
 
-    while (num / div > 9)
-        div *= 10;
+	while (num / div > 9)
+		div *= 10;
 
-    while (div != 0)
-    {
-        length += _putchar('0' + num / div);
-        num %= div;
-        div /= 10;
-    }
+	while (div != 0)
+	{
+		length += _putchar('0' + num / div)
+		num %= div;
+		div /= 10;
+	}
 
-    return length;
+	return (length);
 }
 
