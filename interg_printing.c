@@ -37,7 +37,7 @@ int print_number(int num)
 
 	while (div != 0)
 	{
-		length += _putchar('0' + num / div)
+		length += _putchar('0' + num / div);
 		num %= div;
 		div /= 10;
 	}
